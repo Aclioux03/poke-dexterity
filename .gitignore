@@ -1,0 +1,26 @@
+# Credenciales locales: NUNCA se suben
+.env
+*.env
+!.env.example
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+nbproject/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Respaldos locales de la base (pg_dump)
+*.backup
+backups/
