@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Inicio')}"></head>
+<body data-region="general">
+<header th:replace="~{fragments/layout :: encabezado}"></header>
+
+<main class="contenedor">
+    <h1>Estado de la conexión</h1>
+
+    <section th:if="${estado.conectado}" class="aviso aviso-ok" role="status">
+        <p><strong>Conectado a PostgreSQL.</strong></p>
+        <dl>
+            <dt>Base de datos</dt><dd th:text="${estado.baseDatos}">pokedex</dd>
+            <dt>Usuario JDBC</dt><dd th:text="${estado.usuario}">pokedex_app</dd>
+            <dt>Versión del servidor</dt><dd th:text="${estado.version}">18</dd>
+        </dl>
+    </section>
+
+    <section th:unless="${estado.conectado}" class="aviso aviso-error" role="alert">
+        <p><strong>No se pudo conectar a PostgreSQL.</strong></p>
+        <p th:text="${estado.error}">Mensaje de error</p>
+        <p>Revise el archivo <code>.env</code> y que el servicio de PostgreSQL esté encendido.</p>
+    </section>
+</main>
+
+<footer th:replace="~{fragments/layout :: pie}"></footer>
+</body>
+</html>

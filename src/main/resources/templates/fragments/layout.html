@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(titulo)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${titulo} + ' · PokeDexterity'">PokeDexterity</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+
+<header th:fragment="encabezado" class="encabezado">
+    <a th:href="@{/}" class="marca">PokeDexterity</a>
+</header>
+
+<footer th:fragment="pie" class="pie">
+    Proyecto final · Bases de Datos I · Universidad El Bosque
+</footer>
+
+</body>
+</html>
